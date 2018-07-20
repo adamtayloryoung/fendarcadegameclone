@@ -77,9 +77,35 @@ var Engine = (function(global) {
      * functionality this way (you could just implement collision detection
      * on the entities themselves within your app.js file).
      */
+        function checkCollision(){
+        allEnemies.forEach(function(enemy){
+            if (enemy.xPos < player.xPos + 50 &&
+        enemy.xPos + 30 > player.xPos &&
+        enemy.yPos < player.yPos + 41 &&
+        enemy.yPos + 41 > player.yPos){
+                console.log('TRY AGAIN')
+                player.restart();
+            }
+        });
+    }
+
+        // function rockCollide(){
+        //     allEnemies.forEach(function(enemy){
+        //         if (enemy.xPos < rock.xPos + 50 &&
+        //             enemy.xPos + 30 > rock.xPos &&
+        //             enemy.yPos + 41 > rock.yPos){
+        //             console.log('rock collide')
+        //             enemy.xPos = 0;
+        //         }
+        //     });
+        // }
+
+
     function update(dt) {
+        if(!paused) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollision();
+        }
     }
 
     /* This is called by the update function and loops through all of the
@@ -90,8 +116,10 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
+        //COMMENTED OUT TO LOAD GRID AT FIRST
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
+
         });
         player.update();
     }
@@ -107,12 +135,12 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
+                'images/grass-block2.png',   // Top row is water
                 'images/stone-block.png',   // Row 1 of 3 of stone
                 'images/stone-block.png',   // Row 2 of 3 of stone
                 'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/stone-block.png',   // Row 1 of 2 of grass
+                'images/grass-block2.png'    // Row 2 of 2 of grass
             ],
             numRows = 6,
             numCols = 5,
@@ -152,7 +180,8 @@ var Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
-
+        trophy.render();
+        rock.render();
         player.render();
     }
 
@@ -171,9 +200,16 @@ var Engine = (function(global) {
     Resources.load([
         'images/stone-block.png',
         'images/water-block.png',
-        'images/grass-block.png',
+        'images/grass-block2.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/gel-cube.png',
+        'images/link-sprite.png',
+        'images/spike-ball.png',
+        'images/trophy.png',
+        'images/knight.png',
+        'images/knight-flip.png',
+        'images/rock.png'
     ]);
     Resources.onReady(init);
 

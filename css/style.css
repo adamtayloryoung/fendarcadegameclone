@@ -1,3 +1,7 @@
 body {
     text-align: center;
+    background-color: black;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 10px;
+    color: white;
 }
