@@ -39,7 +39,7 @@ var Player = function(xPos, yPos) {
     this.sprite = 'images/knight.png'
 }
 
-
+//default position and sprite for character
 Player.prototype.restart = function(){
                     this.xPos = 200;
                     this.yPos = 400;
@@ -47,9 +47,8 @@ Player.prototype.restart = function(){
 
 }
 
+// prevent player from moving off the map, detect if trophy is captured
 Player.prototype.update = function(){
-        //check for collisions
-        //did x and y collide with enemy
         if(this.yPos > 390){
             this.yPos = 390;
         };
@@ -73,10 +72,12 @@ Player.prototype.update = function(){
      
 };
 
+//render
 Player.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.xPos, this.yPos);
 };
 
+//controls motion of player
 Player.prototype.handleInput = function(keyPress){
     switch(keyPress){
         case 'up':
@@ -98,7 +99,7 @@ Player.prototype.handleInput = function(keyPress){
 };
 
 
-//trophy code that doesn't work for some reason
+//trophy which if captured restarts game
 var Trophy = function(xPos, yPos){
     this.xPos = xPos;
     this.yPos = yPos;
@@ -106,10 +107,13 @@ var Trophy = function(xPos, yPos){
 
 };
 
+//render trophy
 Trophy.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.xPos, this.yPos);
 }
 
+
+//rock object acts as obstacle to player
 // var Rock = function (xPos, yPos){
 //     this.xPos = xPos;
 //     this.yPos = yPos;
@@ -133,6 +137,7 @@ var trophy = new Trophy(200, -40);
 // var rock  = new Rock(200, 140);
 // var enemy;
 
+//
 enemyPosition.forEach(function(yPos){
     enemy = new Enemy(0, yPos, 100 + Math.floor(Math.random() * 100));
     allEnemies.push(enemy);
@@ -153,7 +158,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 
-//when not focused the game pauses - see engine.js:93
+//when not focused the game pauses
 let paused = false;
 window.onfocus = function () {
     paused = false;
