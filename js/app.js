@@ -67,7 +67,7 @@ Player.prototype.update = function(){
         };
         //if you collect trophy, game resets!
         if(this.xPos === 200 && this.yPos === -28){
-                console.log('You Win!!!')
+                alert('You Win!!!')
                 player.restart();
         }
      
@@ -110,15 +110,15 @@ Trophy.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.xPos, this.yPos);
 }
 
-var Rock = function (xPos, yPos){
-    this.xPos = xPos;
-    this.yPos = yPos;
-    this.sprite = 'images/rock.png'
-}
+// var Rock = function (xPos, yPos){
+//     this.xPos = xPos;
+//     this.yPos = yPos;
+//     this.sprite = 'images/rock.png'
+// }
 
-Rock.prototype.render = function(){
-    ctx.drawImage(Resources.get(this.sprite), this.xPos, this.yPos);
-}
+// Rock.prototype.render = function(){
+//     ctx.drawImage(Resources.get(this.sprite), this.xPos, this.yPos);
+// }
 
 
 // Now instantiate your objects.
@@ -130,7 +130,7 @@ var allEnemies = [];
 var enemyPosition  = [90, 175, 260, 340];
 var player = new Player(200, 390);
 var trophy = new Trophy(200, -40);
-var rock  = new Rock(200, 140);
+// var rock  = new Rock(200, 140);
 // var enemy;
 
 enemyPosition.forEach(function(yPos){
