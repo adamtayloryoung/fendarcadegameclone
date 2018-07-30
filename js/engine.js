@@ -89,17 +89,6 @@ var Engine = (function(global) {
         });
     }
 
-        // function rockCollide(){
-        //     allEnemies.forEach(function(enemy){
-        //         if (enemy.xPos < rock.xPos + 50 &&
-        //             enemy.xPos + 30 > rock.xPos &&
-        //             enemy.yPos + 41 > rock.yPos){
-        //             console.log('rock collide')
-        //             enemy.xPos = 0;
-        //         }
-        //     });
-        // }
-
 
     function update(dt) {
         if(!paused) {
@@ -199,13 +188,8 @@ var Engine = (function(global) {
      */
     Resources.load([
         'images/stone-block.png',
-        'images/water-block.png',
         'images/grass-block2.png',
-        'images/enemy-bug.png',
-        'images/char-boy.png',
         'images/gel-cube.png',
-        'images/link-sprite.png',
-        'images/spike-ball.png',
         'images/trophy.png',
         'images/knight.png',
         'images/knight-flip.png',
