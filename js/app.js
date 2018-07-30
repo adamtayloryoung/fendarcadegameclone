@@ -67,7 +67,7 @@ Player.prototype.update = function(){
         //if you collect trophy, game resets!
         if(this.xPos === 200 && this.yPos === -28){
                 alert('You Win!!!')
-                player.restart();
+                this.restart();
         }
      
 };
