@@ -193,7 +193,6 @@ var Engine = (function(global) {
         'images/trophy.png',
         'images/knight.png',
         'images/knight-flip.png',
-        'images/rock.png'
     ]);
     Resources.onReady(init);
 
