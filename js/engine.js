@@ -170,7 +170,6 @@ var Engine = (function(global) {
             enemy.render();
         });
         trophy.render();
-        // rock.render();
         player.render();
     }
 

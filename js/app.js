@@ -113,18 +113,6 @@ Trophy.prototype.render = function(){
 }
 
 
-//rock object acts as obstacle to player
-// var Rock = function (xPos, yPos){
-//     this.xPos = xPos;
-//     this.yPos = yPos;
-//     this.sprite = 'images/rock.png'
-// }
-
-// Rock.prototype.render = function(){
-//     ctx.drawImage(Resources.get(this.sprite), this.xPos, this.yPos);
-// }
-
-
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
@@ -134,7 +122,6 @@ var allEnemies = [];
 var enemyPosition  = [90, 175, 260, 340];
 var player = new Player(200, 390);
 var trophy = new Trophy(200, -40);
-// var rock  = new Rock(200, 140);
 var enemy;
 
 //
