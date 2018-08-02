@@ -114,15 +114,15 @@ Trophy.prototype.render = function(){
 
 
 //rock object acts as obstacle to player
-var Rock = function (xPos, yPos){
-    this.xPos = xPos;
-    this.yPos = yPos;
-    this.sprite = 'images/rock.png'
-}
+// var Rock = function (xPos, yPos){
+//     this.xPos = xPos;
+//     this.yPos = yPos;
+//     this.sprite = 'images/rock.png'
+// }
 
-Rock.prototype.render = function(){
-    ctx.drawImage(Resources.get(this.sprite), this.xPos, this.yPos);
-}
+// Rock.prototype.render = function(){
+//     ctx.drawImage(Resources.get(this.sprite), this.xPos, this.yPos);
+// }
 
 
 // Now instantiate your objects.
